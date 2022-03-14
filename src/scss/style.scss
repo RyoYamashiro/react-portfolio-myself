@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Hubballi');
+@import url('./reset.css');
+
+// ==================================
+// variable
+// ==================================
+$green : #c7ffea;
+$pink: #ff8af2;
+$brown: #b55a48;
+
+$font-color_default: #777;
+$font-color_date: #e37b89; // TODO:リファクタ必要
+$color_corp: #f780ff;
+$font-color_sub1: #b6a489;
+
+$site-width: 980px;
+
+$font-size_s: 8px;
+$font-size_m: 12px;
+$font-size_default: 16px;
+$font-size_l: 20px;
+$font-size_xl: 24px;
+$font-size_xxl: 28px;
+$font-size_3l: 36px;
+
+$space_s: 6px;
+$space_m: 12px;
+$space_l: 18px;
+$space_xl: 24px;
+$space_xxl: 40px;
+$space_3l: 56px;
+
+$font-family_corp: 'Hubballi', cursive;
+
+// ==================================
+// responsive breakpont
+// ==================================
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// ==================================
+// base
+// ==================================
+html, body {
+  width: 100%;
+  color: $font-color_default;
+  font-size: $font-size_default;
+  line-height: 1.6;
+  text-size-adjust: 100%;
+  letter-spacing: 0.08em;
+}
+
+p, a {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $pink;
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: $brown;
+  transition: .3s;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+// ==================================
+// header
+// ==================================
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  color: $font-color_default;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: $space_3l;
+  padding-right: $space_3l;
+  position: fixed;
+  transition: .3s;
+  z-index: 2;
+  background: $green;
+
+  &.float-active {
+    transition: .3s;
+  }
+  @include mq() {
+    height: 60px;
+    padding-right: $space_xl;
+    padding-left: $space_l;
+  }
+  .title {
+    font-size: $font-size_3l;
+    font-family: $font-family_corp;
+    font-weight: bold;
+    & .menu-link{
+      padding: 0;
+    }
+  }
+
+}
+
+// ==================================
+// menu
+// ==================================
+.nav-menu {
+  @include mq() {
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba($green, .85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    transition: .5s;
+    &.active {
+      transition: .5s;
+      transform: translateX(-100%);
+      z-index: 2;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-size: $font-size_xl;
+  font-family: $font-family_corp;
+  &-item {
+    margin-right: $space_xxl;
+  }
+  &-link {
+    -webkit-font-smoothing: initial;
+  }
+  @include mq() {
+    display: block;
+    font-size: $font-size_xxl;
+    &-item {
+      margin-right: initial;
+    }
+    &-link {
+      -webkit-font-smoothing: initial;
+      display: block;
+      padding: $space_l;
+      text-align: center;
+    }
+  }
+}
+.menu-trigger {
+  display: none;
+  @include mq() {
+    display: inline-block;
+  }
+  transition: all .4s;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+}
+
+// ==================================
+// footer
+// ==================================
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $green;
+  color: $pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  @include mq() {
+    font-size: $font-size_m;
+    height: 55px;
+  }
+}
