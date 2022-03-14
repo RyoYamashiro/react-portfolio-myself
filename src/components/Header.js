@@ -28,8 +28,8 @@ function Header(){
       <nav className={ClassNameHamburger}>
 
         <ul className="menu">
-          <li className="menu-item"><a className="menu-link" href="#skills" onClick={handleClickCloseMenu} >Skills</a></li>
-          <li className="menu-item"><a className="menu-link" href="#bio" onClick={handleClickCloseMenu} >Bio</a></li>
+          <li className="menu-item"><Link className="menu-link" to="/skills" onClick={handleClickCloseMenu} >Skills</Link></li>
+          <li className="menu-item"><Link className="menu-link" to="/bio" onClick={handleClickCloseMenu} >Bio</Link></li>
           <li className="menu-item"><Link className="menu-link" to="/contact" onClick={handleClickCloseMenu}>Contact</Link></li>
         </ul>
       </nav>
