@@ -1,15 +1,20 @@
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import routes from './routes';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
+const App = () => {
+    return (
+         <Switch>
+             {routes.map((route, idx) => (
+                <Route
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                    key={idx}
+                />
+             ))}
+          </Switch>
+    );
+};
 
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
+export default withRouter(App);

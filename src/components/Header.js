@@ -1,6 +1,7 @@
 import {Fade as Hamburger} from 'hamburger-react'
 import ClassNames from 'classnames';
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,7 +21,7 @@ function Header(){
 
   return (
     <header className="header">
-      <h1 className="title"><a className="menu-link" href="#">RyoYama</a></h1>
+      <h1 className="title"><Link className="menu-link" to="/">RyoYama</Link></h1>
       <div className="menu-trigger">
         <Hamburger toggled={isOpen} toggle={setOpen} color="#ff8af2" rounded />
       </div>
@@ -29,7 +30,7 @@ function Header(){
         <ul className="menu">
           <li className="menu-item"><a className="menu-link" href="#skills" onClick={handleClickCloseMenu} >Skills</a></li>
           <li className="menu-item"><a className="menu-link" href="#bio" onClick={handleClickCloseMenu} >Bio</a></li>
-          <li className="menu-item"><a className="menu-link" href="#contact" onClick={handleClickCloseMenu}>Contact</a></li>
+          <li className="menu-item"><Link className="menu-link" to="/contact" onClick={handleClickCloseMenu}>Contact</Link></li>
         </ul>
       </nav>
     </header>

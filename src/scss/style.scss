@@ -8,8 +8,8 @@ $green : #c7ffea;
 $pink: #ff8af2;
 $brown: #b55a48;
 
-$font-color_default: #777;
-$font-color_date: #e37b89; // TODO:リファクタ必要
+$font-color_default: #666;
+$font-color_date: #e37b89;
 $color_corp: #f780ff;
 $font-color_sub1: #b6a489;
 
@@ -175,6 +175,13 @@ img {
   box-sizing: border-box;
   position: relative;
   z-index: 3;
+}
+
+// ==================================
+// main
+// ==================================
+.main{
+  padding-top: 70px;
 }
 
 // ==================================
