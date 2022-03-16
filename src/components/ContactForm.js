@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import {Grid, TextField, Button} from '@material-ui/core';
 
 import {init, sendForm, send} from 'emailjs-com';
@@ -29,7 +29,8 @@ const reducer = (state, action) => {
 
 
 const ContactForm = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [formState, dispatch] = useReducer(reducer, initialState);
+  const [sendState, setSendState] = useState(false);
 
   const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -50,6 +51,12 @@ const ContactForm = () => {
       send(service_id, template_id, template_param).then(() => {
         console.log(template_param);
         console.log("seccess to send email");
+
+      }).then(() => {
+        setSendState(true);
+        const removeSendMessage = () => setSendState(false);
+        setTimeout(removeSendMessage, 3000);
+
       })
      }
   }
@@ -61,10 +68,11 @@ const ContactForm = () => {
 
   const onSubmit = (event) => {
     console.log("push submit");
-    sendEmail(event.name, event.mail, event.title, state.message);
+    sendEmail(event.name, event.mail, event.title, formState.message);
   }
   return (
-    <div class="contact-form-wrapper">
+    <div className="contact-form-wrapper">
+      {sendState === true && <p>送ったよ</p>}
           <form className="contact-form" onSubmit={handleSubmit(onSubmit)} className="form">
             <div className="textfield-wrapper">
               <TextField id="outlined-basic" label="名前" variant="outlined" fullWidth onChange={handleChangeText} {...register("name", {required: REQURED_VAL_MESSAGE})}  />
