@@ -23,10 +23,10 @@ $font-size_xl: 24px;
 $font-size_xxl: 28px;
 $font-size_3l: 36px;
 
-$space_s: 6px;
-$space_m: 12px;
-$space_l: 18px;
-$space_xl: 24px;
+$space_s: 8px;
+$space_m: 16px;
+$space_l: 24px;
+$space_xl: 32px;
 $space_xxl: 40px;
 $space_3l: 56px;
 
@@ -182,6 +182,33 @@ img {
 // ==================================
 .main{
   padding-top: 70px;
+  .container{
+    width: 820px;
+    margin: $space_l auto;
+  }
+  .title-wrapper{
+    text-align: center;
+    .title{
+      font-size: $font-size_xxl;
+      color: $pink;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 0 5px;
+      border-top: 7px solid $green;
+      border-bottom: 7px solid $green;
+      margin-bottom: $space_s;
+      border-radius: 6px;
+    }
+  }
+  .subtitle{
+    text-align: center;
+    margin-bottom: $space_xl;
+  }
+}
+
+
+.form{
+  width: 100%;
 }
 
 // ==================================
@@ -200,5 +227,21 @@ img {
   @include mq() {
     font-size: $font-size_m;
     height: 55px;
+  }
+}
+
+
+// ==================================
+// contact
+// ==================================
+
+.contact-form-wrapper{
+  width: 75%;
+  margin: 0 auto;
+  .textfield-wrapper{
+    margin-bottom: $space_l;
+  }
+  .error-message{
+    color: red;
   }
 }

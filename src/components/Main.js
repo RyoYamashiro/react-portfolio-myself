@@ -1,21 +1,22 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import routes from '../routes';
 function Main(){
   return (
     <main className="main">
-    <Switch>
-        {routes.map((route, idx) => (
-           <Route
-               path={route.path}
-               exact={route.exact}
-               component={route.component}
-               key={idx}
-           />
-      ))}
-   </Switch>
+      <div className="container">
+        <Switch>
+            {routes.map((route, idx) => (
+               <Route
+                   path={route.path}
+                   exact={route.exact}
+                   component={route.component}
+                   key={idx}
+               />
+          ))}
+       </Switch>
+     </div>
     </main>
   )
 }
-
-export default Main;
+export default withRouter(Main);
