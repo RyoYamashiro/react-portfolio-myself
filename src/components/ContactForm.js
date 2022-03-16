@@ -3,6 +3,7 @@ import {Grid, TextField, Button} from '@material-ui/core';
 
 import {init, sendForm, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
+import ClassNames from 'classnames';
 
 const REQURED_VAL_MESSAGE = "入力必須となっております。";
 
@@ -34,6 +35,11 @@ const ContactForm = () => {
 
   const {register, handleSubmit, formState: {errors}} = useForm();
 
+  const classNameSendMessage = ClassNames({
+    "send-message": true,
+    "active": sendState
+  });
+
   const sendEmail = (name, mail, title, message) => {
 
     const user_id = process.env.REACT_APP_USER_ID;
@@ -55,7 +61,7 @@ const ContactForm = () => {
       }).then(() => {
         setSendState(true);
         const removeSendMessage = () => setSendState(false);
-        setTimeout(removeSendMessage, 3000);
+        setTimeout(removeSendMessage, 4000);
 
       })
      }
@@ -72,7 +78,7 @@ const ContactForm = () => {
   }
   return (
     <div className="contact-form-wrapper">
-      {sendState === true && <p>送ったよ</p>}
+      <p className={classNameSendMessage}>問い合わせ完了しました。</p>
           <form className="contact-form" onSubmit={handleSubmit(onSubmit)} className="form">
             <div className="textfield-wrapper">
               <TextField id="outlined-basic" label="名前" variant="outlined" fullWidth onChange={handleChangeText} {...register("name", {required: REQURED_VAL_MESSAGE})}  />
