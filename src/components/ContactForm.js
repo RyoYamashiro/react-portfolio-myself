@@ -14,37 +14,21 @@ const useStyles = makeStyles ({
     background: '#ff8af2',
     color: '#fff',
     float: 'right',
+    margin: 0,
     '&:hover':{
       background: '#f283e5',
     }
   }
 });
 
-const initialFormState = {
-  name: '',
-  mail: '',
-  title: '',
-  message: ''
-};
-const initialSendState = {
+const initialstate = {
   sendMessage: '',
   sendStatus: 0
 };
 
-const formReducer = (state, action) => {
-  switch(action.type){
-    case 'name' :
-      return {...state, name: action.payload};
-    case 'mail' :
-      return {...state, mail: action.payload};
-    case 'title' :
-      return {...state, title: action.payload};
-    case 'message' :
-      return {...state, message: action.payload};
-  }
-}
 
-const sendReducer = (state, action) => {
+
+const reducer = (state, action) => {
   switch(action.type){
     case 'sending':
       return {sendMessage: '問い合わせ送信中です。', sendStatus: 1};
@@ -57,8 +41,7 @@ const sendReducer = (state, action) => {
 
 
 const ContactForm = () => {
-  const [contactFormState, formDispatch] = useReducer(formReducer, initialFormState);
-  const [sendState, sendDispatch] = useReducer(sendReducer, initialSendState);
+  const [state, dispatch] = useReducer(reducer, initialstate);
 
   const {register, handleSubmit, formState: {errors}} = useForm({
     mode: 'onChange'
@@ -68,8 +51,8 @@ const ContactForm = () => {
 
   const classNameSendMessage = ClassNames({
     'send-message': true,
-    'active': sendState.sendStatus !== 0,
-    'success': sendState.sendStatus === 2
+    'active': state.sendStatus !== 0,
+    'success': state.sendStatus === 2
   });
 
   const sendEmail = (name, mail, title, message) => {
@@ -78,7 +61,7 @@ const ContactForm = () => {
     const service_id = process.env.REACT_APP_SERVICE_ID;
     const template_id = process.env.REACT_APP_TEMPLATE_ID;
     if((user_id != undefined) && (service_id != undefined) && (template_id != undefined)){
-      sendDispatch({type: 'sending'})
+      dispatch({type: 'sending'})
       init(user_id);
       const template_param = {
         to_name: name,
@@ -90,18 +73,15 @@ const ContactForm = () => {
       send(service_id, template_id, template_param).then(() => {
         console.log(template_param);
         console.log('seccess to send email');
-        sendDispatch({type: 'done'});
+        dispatch({type: 'done'});
 
       }).then(() => {
-        const removeSendMessage = () => sendDispatch({type: 'finish'});
+        const removeSendMessage = () => dispatch({type: 'finish'});
         setTimeout(removeSendMessage, 3000);
       })
      }
   }
 
-  const handleChangeText = (e) => {
-    formDispatch({type: e.target.name , payload: e.target.value});
-  }
 
 
   const onSubmit = (event) => {
@@ -110,28 +90,28 @@ const ContactForm = () => {
   }
   return (
     <div className="contact-form-wrapper">
-      <p className={classNameSendMessage}>{sendState.sendMessage}</p>
+      <p className={classNameSendMessage}>{state.sendMessage}</p>
           <form className="contact-form" onSubmit={handleSubmit(onSubmit)} className="form">
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="名前(入力必須)" variant="outlined" fullWidth onChange={handleChangeText} {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="名前(入力必須)" variant="outlined" fullWidth {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
 
               <p className="error-message">{errors.name && errors.name.message}</p>
             </div>
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="メールアドレス(入力必須)" variant="outlined" fullWidth onChange={handleChangeText} {...register("mail", {required: REQURED_VAL_MESSAGE, pattern: {value: /^\S+@\S+$/i, message: EMAIL_VAL_MESSAGE}, maxLength: {value: 80, message: "80" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="メールアドレス(入力必須)" variant="outlined" fullWidth {...register("mail", {required: REQURED_VAL_MESSAGE, pattern: {value: /^\S+@\S+$/i, message: EMAIL_VAL_MESSAGE}, maxLength: {value: 80, message: "80" + MAXLENGTH_VAL_MESSAGE}})}  />
 
               <p className="error-message">{errors.mail && errors.mail.message}</p>
             </div>
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="件名(入力必須)" variant="outlined" fullWidth onChange={handleChangeText} {...register("title", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})} />
+              <TextField id="outlined-basic" label="件名(入力必須)" variant="outlined" fullWidth {...register("title", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})} />
               <p className="error-message">{errors.title && errors.title.message}</p>
             </div>
 
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="内容(入力必須)" variant="outlined" fullWidth multiline rows={7} {...register("message", {required: REQURED_VAL_MESSAGE, maxLength: {value: 300, message: "300" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="内容(入力必須)" variant="outlined" fullWidth multiline rows={7} {...register("message", {required: REQURED_VAL_MESSAGE, maxLength: {value: 500, message: "500" + MAXLENGTH_VAL_MESSAGE}})}  />
               <p className="error-message">{errors.message && errors.message.message}</p>
             </div>
             <Button className={classes.main_button} variant="contained" size="large" type="submit">メール送信</Button>
