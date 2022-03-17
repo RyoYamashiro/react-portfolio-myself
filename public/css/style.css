@@ -151,6 +151,7 @@ img {
 
 .contact-form {
   width: 100%;
+  overflow: hidden;
 }
 
 .footer {
@@ -200,6 +201,10 @@ img {
 }
 .send-message.active {
   transform: translateY(0%);
+}
+.send-message.success {
+  background: #ff8af2;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

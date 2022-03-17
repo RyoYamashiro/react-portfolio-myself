@@ -209,6 +209,7 @@ img {
 
 .contact-form{
   width: 100%;
+  overflow: hidden;
 }
 
 // ==================================
@@ -264,5 +265,9 @@ img {
   transform: translateY(-100%);
   &.active{
     transform: translateY(0%);
+  }
+  &.success{
+    background: $pink;
+    color: #fff;
   }
 }
