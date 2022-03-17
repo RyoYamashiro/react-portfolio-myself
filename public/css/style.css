@@ -3,7 +3,7 @@
 html, body {
   width: 100%;
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   text-size-adjust: 100%;
   letter-spacing: 0.08em;
@@ -29,10 +29,17 @@ img {
   vertical-align: bottom;
 }
 
+.container {
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
 .header {
   box-sizing: border-box;
-  width: 100%;
   height: 70px;
+  width: 100%;
   color: #666;
   display: flex;
   align-items: center;
@@ -52,10 +59,11 @@ img {
     height: 60px;
     padding-right: 32px;
     padding-left: 24px;
+    width: 100%;
   }
 }
 .header .title {
-  font-size: 36px;
+  font-size: 35px;
   font-family: "Hubballi", cursive;
   font-weight: bold;
 }
@@ -85,7 +93,7 @@ img {
 .menu {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Hubballi", cursive;
 }
 .menu-item {
@@ -97,7 +105,7 @@ img {
 @media screen and (max-width: 414px) {
   .menu {
     display: block;
-    font-size: 28px;
+    font-size: 30px;
   }
   .menu-item {
     margin-right: initial;
@@ -126,23 +134,29 @@ img {
 .main {
   padding-top: 70px;
 }
-.main .container {
+.main-container {
   width: 820px;
   margin: 24px auto;
+}
+@media screen and (max-width: 414px) {
+  .main-container {
+    width: 100%;
+  }
 }
 .main .title-wrapper {
   text-align: center;
 }
 .main .title-wrapper .title {
-  font-size: 28px;
+  font-size: 30px;
+  font-family: "Hubballi", cursive;
   color: #ff8af2;
   display: inline-block;
   box-sizing: border-box;
-  padding: 0 5px;
-  border-top: 7px solid #c7ffea;
-  border-bottom: 7px solid #c7ffea;
+  padding: 0px 5px;
+  border-top: 6px solid #c7ffea;
+  border-bottom: 5px solid #c7ffea;
   margin-bottom: 8px;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 .main .subtitle {
   text-align: center;
@@ -163,12 +177,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 65px;
+  height: 50px;
 }
 @media screen and (max-width: 414px) {
   .footer {
-    font-size: 12px;
-    height: 55px;
+    font-size: 10px;
+    height: 45px;
   }
 }
 
@@ -182,6 +196,11 @@ img {
 .contact-form-wrapper .error-message {
   color: red;
   height: 1em;
+}
+@media screen and (max-width: 414px) {
+  .contact-form-wrapper .error-message {
+    font-size: 14px;
+  }
 }
 
 .send-message {

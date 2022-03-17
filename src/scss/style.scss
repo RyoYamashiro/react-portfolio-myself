@@ -15,13 +15,13 @@ $font-color_sub1: #b6a489;
 
 $site-width: 980px;
 
-$font-size_s: 8px;
-$font-size_m: 12px;
-$font-size_default: 16px;
+$font-size_s: 5px;
+$font-size_m: 10px;
+$font-size_default: 14px;
 $font-size_l: 20px;
-$font-size_xl: 24px;
-$font-size_xxl: 28px;
-$font-size_3l: 36px;
+$font-size_xl: 25px;
+$font-size_xxl: 30px;
+$font-size_3l: 35px;
 
 $space_s: 8px;
 $space_m: 16px;
@@ -53,6 +53,7 @@ $breakpoints: (
 // base
 // ==================================
 html, body {
+
   width: 100%;
   color: $font-color_default;
   font-size: $font-size_default;
@@ -60,6 +61,7 @@ html, body {
   text-size-adjust: 100%;
   letter-spacing: 0.08em;
 }
+
 
 p, a {
   -webkit-font-smoothing: antialiased;
@@ -82,12 +84,21 @@ img {
 }
 
 // ==================================
+// container
+// ==================================
+.container{
+  position: relative;
+        padding-bottom: 60px;
+        box-sizing: border-box;
+        min-height: 100vh;
+}
+// ==================================
 // header
 // ==================================
 .header {
   box-sizing: border-box;
-  width: 100%;
   height: 70px;
+  width: 100%;
   color: $font-color_default;
   display: flex;
   align-items: center;
@@ -106,6 +117,7 @@ img {
     height: 60px;
     padding-right: $space_xl;
     padding-left: $space_l;
+    width: 100%;
   }
   .title {
     font-size: $font-size_3l;
@@ -182,22 +194,27 @@ img {
 // ==================================
 .main{
   padding-top: 70px;
-  .container{
+
+  &-container{
     width: 820px;
     margin: $space_l auto;
+    @include mq() {
+      width: 100%;
+    }
   }
   .title-wrapper{
     text-align: center;
     .title{
       font-size: $font-size_xxl;
+      font-family: $font-family_corp;
       color: $pink;
       display: inline-block;
       box-sizing: border-box;
-      padding: 0 5px;
-      border-top: 7px solid $green;
-      border-bottom: 7px solid $green;
+      padding: 0px 5px;
+      border-top: 6px solid $green;
+      border-bottom: 5px solid $green;
       margin-bottom: $space_s;
-      border-radius: 6px;
+      border-radius: 5px;
     }
   }
   .subtitle{
@@ -217,17 +234,18 @@ img {
 // ==================================
 .footer {
   position: absolute;
-  bottom: 0;
+      bottom: 0;
+
   width: 100%;
   background: $green;
   color: $pink;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 65px;
+  height: 50px;
   @include mq() {
     font-size: $font-size_m;
-    height: 55px;
+    height: 45px;
   }
 }
 
@@ -245,6 +263,9 @@ img {
   .error-message{
     color: red;
     height: 1em;
+    @include mq(){
+      font-size: 14px;
+    }
   }
 }
 

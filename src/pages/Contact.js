@@ -2,10 +2,10 @@ import Title from '../components/Title';
 import ContactForm from '../components/ContactForm';
 function Contact(){
   return(
-    <div>
-      <Title title="Contact" />
+    <>
+      <Title title="Contact" subtitle="リョウヤマへ連絡するためのページ" />
       <ContactForm />
-    </div>
+    </>
   );
 }
 export default Contact;

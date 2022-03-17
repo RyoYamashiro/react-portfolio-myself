@@ -5,11 +5,11 @@ import Main from './components/Main';
 
 const App = () => {
     return (
-      <>
+      <div className="container">
         <Header />
         <Main />
         <Footer />
-      </>
+      </div>
     );
 };
 

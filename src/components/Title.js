@@ -4,7 +4,7 @@ function Title(props){
       <div className="title-wrapper">
         <h2 className="title">{props.title}</h2>
       </div>
-      <p className="subtitle">ヤマリョウへ連絡するためのページ</p>
+      <p className="subtitle">{props.subtitle}</p>
     </>
   );
 }

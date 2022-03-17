@@ -1,8 +1,11 @@
+import Title from '../components/Title'
 
 
 function Bio(){
   return (
-    <div>Bio</div>
+    <div>
+    <Title title="Bio" subtitle="リョウヤマとは" />
+    </div>
   );
 }
 export default Bio;
