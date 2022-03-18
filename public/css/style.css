@@ -165,7 +165,7 @@ img {
 }
 .main .subtitle {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .contact-form {
@@ -230,6 +230,33 @@ img {
 .send-message.success {
   background: #ff8af2;
   color: #fff;
+}
+
+.language-heading {
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.second-title {
+  color: #b55a48;
+  font-size: 20px;
+  display: inline-block;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #c7ffea;
+  border-radius: 8px;
+  float: left;
+  margin-right: 24px;
+}
+
+.language-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.language-item {
+  margin: 0 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

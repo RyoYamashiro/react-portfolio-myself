@@ -222,7 +222,7 @@ img {
   }
   .subtitle{
     text-align: center;
-    margin-bottom: $space_xl;
+    margin-bottom: $space_l;
   }
 }
 
@@ -295,4 +295,36 @@ img {
     background: $pink;
     color: #fff;
   }
+}
+
+
+
+// ==================================
+// skill
+// ==================================
+
+
+.language-heading {
+ margin-bottom: $space_m;
+ overflow: hidden;
+}
+.second-title{
+  color: $brown;
+  font-size: $font-size_l;
+  display: inline-block;
+  padding: $space_s;
+  box-sizing: border-box;
+  background: $green;
+  border-radius: $space_s;
+  float: left;
+  margin-right: $space_l;
+}
+
+.language-container {
+ display: flex;
+ flex-wrap: wrap;
+ text-align: center;
+}
+.language-item {
+  margin: 0 $space_l;
 }
