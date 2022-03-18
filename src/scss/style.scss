@@ -88,9 +88,12 @@ img {
 // ==================================
 .container{
   position: relative;
-        padding-bottom: 60px;
-        box-sizing: border-box;
-        min-height: 100vh;
+  padding-bottom: 50px;
+  @include mq(){
+    padding-bottom: 45px;
+  }
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 // ==================================
 // header
@@ -225,6 +228,7 @@ img {
 
 
 .contact-form{
+  padding-top: $space_s;
   width: 100%;
   overflow: hidden;
 }
@@ -234,7 +238,7 @@ img {
 // ==================================
 .footer {
   position: absolute;
-      bottom: 0;
+  bottom: 0;
 
   width: 100%;
   background: $green;

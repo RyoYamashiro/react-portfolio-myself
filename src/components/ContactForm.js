@@ -91,7 +91,7 @@ const ContactForm = () => {
   return (
     <div className="contact-form-wrapper">
       <p className={classNameSendMessage}>{state.sendMessage}</p>
-          <form className="contact-form" onSubmit={handleSubmit(onSubmit)} className="form">
+          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="textfield-wrapper">
               <TextField id="outlined-basic" label="名前(入力必須)" variant="outlined" fullWidth {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
 
