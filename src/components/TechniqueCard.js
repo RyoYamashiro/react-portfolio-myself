@@ -17,12 +17,12 @@ const useStyles = makeStyles ({
   technique_button: {
     background: '#c7ffea',
     color: '#ff8af2',
-    fontSize: '28px',
+    fontSize: '20px',
     fontFamily: 'Hubballi',
     display: 'block',
     width: '100%',
     transition: '.3s',
-    minHeight: '70px',
+    minHeight: '60px',
     '&:hover': {
       background: '#bff2e0',
       transform: 'translateY(-3px)',

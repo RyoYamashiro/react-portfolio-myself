@@ -277,6 +277,7 @@ img {
   flex-wrap: wrap;
   text-align: center;
   margin-bottom: 32px;
+  min-height: 130px;
 }
 
 .language-item {

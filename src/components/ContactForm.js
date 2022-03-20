@@ -16,9 +16,12 @@ const useStyles = makeStyles ({
     background: '#ff8af2',
     color: '#fff',
     float: 'right',
+    transition: '.3s',
     margin: 0,
     '&:hover':{
       background: '#f283e5',
+      transition: '.3s',
+      transform: 'translateY(-5px)',
     }
   }
 });
