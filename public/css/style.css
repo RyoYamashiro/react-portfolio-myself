@@ -146,6 +146,8 @@ img {
 @media screen and (max-width: 414px) {
   .main-container {
     width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
   }
 }
 .main .title-wrapper {
@@ -155,17 +157,16 @@ img {
   font-size: 30px;
   font-family: "Hubballi", cursive;
   color: #ff8af2;
+  background: #c7ffea;
   display: inline-block;
   box-sizing: border-box;
-  padding: 0px 5px;
-  border-top: 6px solid #c7ffea;
-  border-bottom: 5px solid #c7ffea;
+  padding: 0px 8px;
   margin-bottom: 8px;
   border-radius: 5px;
 }
 .main .subtitle {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .contact-form {
@@ -232,31 +233,102 @@ img {
   color: #fff;
 }
 
-.language-heading {
+.second-title-container {
   margin-bottom: 16px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 414px) {
+  .second-title-container {
+    display: block;
+  }
 }
 
 .second-title {
-  color: #b55a48;
+  color: #ff8af2;
+  font-weight: bold;
   font-size: 20px;
   display: inline-block;
   padding: 8px;
   box-sizing: border-box;
-  background: #c7ffea;
-  border-radius: 8px;
+  border-top: 5px solid #c7ffea;
+  border-bottom: 5px solid #c7ffea;
+  border-radius: 5px;
   float: left;
   margin-right: 24px;
+  font-family: "Hubballi", cursive;
+}
+@media screen and (max-width: 414px) {
+  .second-title {
+    float: none;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 414px) {
+  .second-title-wrapper {
+    text-align: center;
+    margin-bottom: 8px;
+  }
 }
 
 .language-container {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  margin-bottom: 32px;
 }
 
 .language-item {
   margin: 0 24px;
+}
+@media screen and (max-width: 414px) {
+  .language-item {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .language-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.techniques-wrapper {
+  overflow: hidden;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+.modal-technique-title {
+  text-align: center;
+  color: #ff8af2;
+  font-size: 30px;
+  font-family: "Hubballi", cursive;
+}
+
+.technique-card {
+  width: calc(50% - 16px);
+  margin-right: 16px;
+  margin-bottom: 16px;
+  float: left;
+}
+@media screen and (max-width: 414px) {
+  .technique-card {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.technique-card:nth-child(even) {
+  margin-right: 0;
+}
+
+.technique-modal {
+  border-radius: 16px;
+}
+@media screen and (max-width: 414px) {
+  .technique-modal {
+    width: 75vw !important;
+    padding: 24px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
 import Title from '../components/Title'
 import LanguageList from '../components/LanguageList';
+import TechniqueList from '../components/TechniqueList';
 
 
 function Skills(){
@@ -7,6 +8,7 @@ function Skills(){
     <>
       <Title title="Skills" subtitle="リョウヤマの才能" />
       <LanguageList />
+      <TechniqueList />
     </>
   );
 }

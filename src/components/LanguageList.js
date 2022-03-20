@@ -1,16 +1,13 @@
 import Circle from 'react-circle';
 import {requestStates} from '../constants';
 import {useSkills} from '../customHooks/useSkills';
+import SecondTitle from './SecondTitle';
 
 function LanguageList(){
   const [sortedLanguageList, fetchRequestState, converseCountToPercentage] = useSkills();
   return(
-    <div class="language-list-wrapper">
-    <div className="language-list-container">
-      <div className="language-heading">
-        <h2 className="second-title">Languages</h2>
-        <p className="second-subtitle">私が使用可能な言語を一覧にしております。(パーセンテージはgithubAPIにより、リポジトリ内に格納されているファイルの拡張子により算出しております。)</p>
-      </div>
+    <>
+      <SecondTitle title="Languages" subtitle="私が使用可能な言語を一覧にしております。(パーセンテージはgithubAPIにより、リポジトリ内に格納されているファイルの拡張子の数×10%で算出しておりますので、熟練度とは異なります。)" />
       <div className="language-container">
        {
          fetchRequestState === requestStates.loading && (
@@ -21,10 +18,12 @@ function LanguageList(){
           fetchRequestState === requestStates.success && (
             sortedLanguageList().map((item, index) => (
               <div className="language-item" key={index}>
-                <p className="description"><strong>{item.language}</strong></p>
+                <p className="description">{item.language}</p>
                 <Circle
                   animate
                   progress={converseCountToPercentage(item.count)}
+                  progressColor="#ff8af2"
+                  lineWidth="25px"
                 />
               </div>
             ))
@@ -35,9 +34,8 @@ function LanguageList(){
            <p className="description">エラーが発生しました</p>
          )
        }
-      </div>
     </div>
-    </div>
+    </>
   );
 }
 export default LanguageList;

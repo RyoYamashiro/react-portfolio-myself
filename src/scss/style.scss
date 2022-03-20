@@ -7,7 +7,6 @@
 $green : #c7ffea;
 $pink: #ff8af2;
 $brown: #b55a48;
-
 $font-color_default: #666;
 $font-color_date: #e37b89;
 $color_corp: #f780ff;
@@ -203,6 +202,8 @@ img {
     margin: $space_l auto;
     @include mq() {
       width: 100%;
+      box-sizing: border-box;
+      padding: 0 $space_m;
     }
   }
   .title-wrapper{
@@ -211,18 +212,17 @@ img {
       font-size: $font-size_xxl;
       font-family: $font-family_corp;
       color: $pink;
+      background: $green;
       display: inline-block;
       box-sizing: border-box;
-      padding: 0px 5px;
-      border-top: 6px solid $green;
-      border-bottom: 5px solid $green;
+      padding: 0px $space_s;
       margin-bottom: $space_s;
       border-radius: 5px;
     }
   }
   .subtitle{
     text-align: center;
-    margin-bottom: $space_l;
+    margin-bottom: $space_m;
   }
 }
 
@@ -304,27 +304,90 @@ img {
 // ==================================
 
 
-.language-heading {
+.second-title-container {
  margin-bottom: $space_m;
  overflow: hidden;
+ display:flex;
+ align-items: center;
+ @include mq(){
+   display: block;
+ }
 }
+
 .second-title{
-  color: $brown;
+  color: $pink;
+  font-weight: bold;
   font-size: $font-size_l;
   display: inline-block;
   padding: $space_s;
   box-sizing: border-box;
-  background: $green;
-  border-radius: $space_s;
+  border-top: 5px solid $green;
+  border-bottom: 5px solid $green;
+  border-radius: 5px;
   float: left;
   margin-right: $space_l;
+  font-family: $font-family_corp;
+  @include mq(){
+    float: none;
+    margin-right: 0;
+  }
+  &-wrapper{
+    @include mq(){
+      text-align: center;
+      margin-bottom: $space_s;
+    }
+  }
 }
 
 .language-container {
  display: flex;
  flex-wrap: wrap;
  text-align: center;
+ margin-bottom: $space_xl;
 }
 .language-item {
   margin: 0 $space_l;
+  @include mq(){
+    width: 100%;
+    margin-bottom: $space_l;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.techniques-wrapper{
+  overflow: hidden;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+.modal-technique-title{
+  text-align: center;
+  color: $pink;
+  font-size: $font-size_xxl;
+  font-family: $font-family_corp;
+}
+
+.technique-card{
+  width: calc(50% - #{$space_m});
+  margin-right: $space_m;
+  margin-bottom: $space_m;
+  float: left;
+  @include mq(){
+    width: 100%;
+    margin-right: 0;
+  }
+  &:nth-child(even){
+    margin-right: 0;
+  }
+}
+.technique-modal{
+  border-radius: $space_m;
+
+  @include mq(){
+    width: 75vw !important;
+    padding: $space_l !important;
+  }
 }

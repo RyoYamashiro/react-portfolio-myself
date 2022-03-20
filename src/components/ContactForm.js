@@ -6,6 +6,8 @@ import {init, sendForm, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
 import ClassNames from 'classnames';
 
+import {contactReducer, initialState} from '../reducers/contactReducer';
+
 const REQURED_VAL_MESSAGE = "入力必須となっております。";
 const EMAIL_VAL_MESSAGE = "Emailアドレスの形式で入力ください。";
 const MAXLENGTH_VAL_MESSAGE = "文字以内で入力ください";
@@ -21,27 +23,10 @@ const useStyles = makeStyles ({
   }
 });
 
-const initialstate = {
-  sendMessage: '',
-  sendStatus: 0
-};
-
-
-
-const reducer = (state, action) => {
-  switch(action.type){
-    case 'sending':
-      return {sendMessage: '問い合わせ送信中です。', sendStatus: 1};
-    case 'done':
-      return {sendMessage: '問い合わせ送信完了しました。', sendStatus: 2};
-    case 'finish':
-      return {...state, sendStatus: 0};
-  }
-}
-
 
 const ContactForm = () => {
-  const [state, dispatch] = useReducer(reducer, initialstate);
+
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
   const {register, handleSubmit, formState: {errors}} = useForm({
     mode: 'onChange'
