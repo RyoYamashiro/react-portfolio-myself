@@ -59,6 +59,7 @@ const ContactForm = () => {
       };
       console.log(template_param);
       send(service_id, template_id, template_param).then(() => {
+
         console.log(template_param);
         console.log('seccess to send email');
         dispatch({type: 'done'});
