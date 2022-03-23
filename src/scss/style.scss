@@ -392,3 +392,11 @@ img {
     padding: $space_l !important;
   }
 }
+
+.badge{
+  color: $pink;
+  height: 1.5em;
+  margin-right: $space_s;
+  border-bottom: 3px solid $green;
+  box-sizing: border-box;
+}
