@@ -1,21 +1,18 @@
-import React from 'react';
+import {useState} from 'react';
 
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
+import {Accordion, AccordionDetails, AccordionSummary, Typography} from '@mui/material';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function InterviewAccordion(props){
 
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   return(
 
-  <Accordion sx={{border: '3px solid #c7ffea', borderRadius: '10px'}} expanded={expanded === 'panel'+ props.data.number} onChange={handleChange('panel'+ props.data.number)}>
+  <Accordion sx={{border: '4px solid #c7ffea', borderRadius: '10px', boxShadow: 'none'}} expanded={expanded === 'panel'+ props.data.number} onChange={handleChange('panel'+ props.data.number)}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel2bh-content"

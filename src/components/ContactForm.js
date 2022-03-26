@@ -1,5 +1,5 @@
 import React, {useReducer, useState} from 'react';
-import {Grid, TextField, Button} from '@material-ui/core';
+import {Grid, TextField, Button} from '@mui/material';
 import {makeStyles} from '@material-ui/core/styles';
 
 import {init, sendForm, send} from 'emailjs-com';
@@ -7,6 +7,11 @@ import {useForm} from 'react-hook-form';
 import ClassNames from 'classnames';
 
 import {contactReducer, initialState} from '../reducers/contactReducer';
+
+import styled from 'styled-components';
+import {space_l, space_s, font_size_l, brown, pink} from '../utils/styledComponents';
+
+
 
 const REQURED_VAL_MESSAGE = "入力必須となっております。";
 const EMAIL_VAL_MESSAGE = "Emailアドレスの形式で入力ください。";
@@ -25,6 +30,47 @@ const useStyles = makeStyles ({
     }
   }
 });
+
+const ContactFormContainer = styled.div`
+  width: 75%;
+  margin: 0 auto;
+    .textfield-wrapper{
+    margin-bottom: ${space_l};
+    }
+    .error-message{
+    color: red;
+    height: 1em;
+    @include mq(){
+      font-size: 14px;
+    }
+    .contact-form{
+      padding-top: ${space_s};
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+`;
+const SendMessage = styled.p`
+  position: fixed;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  background: ${brown};
+  text-align: center;
+  font-size: ${font_size_l};
+  color: #fff;
+  z-index: 3;
+  transform: translateY(-100%);
+  &.active{
+    transform: translateY(0%);
+  }
+  &.success{
+    background: ${pink};
+  }
+`;
 
 
 const ContactForm = () => {
@@ -78,8 +124,8 @@ const ContactForm = () => {
     sendEmail(event.name, event.mail, event.title, event.message);
   }
   return (
-    <div className="contact-form-wrapper">
-      <p className={classNameSendMessage}>{state.sendMessage}</p>
+    <ContactFormContainer>
+      <SendMessage className={classNameSendMessage}>{state.sendMessage}</SendMessage>
           <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="textfield-wrapper">
               <TextField id="outlined-basic" label="名前(入力必須)" variant="outlined" fullWidth {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
@@ -106,7 +152,7 @@ const ContactForm = () => {
             <Button className={classes.main_button} variant="contained" size="large" type="submit">メール送信</Button>
 
           </form>
-    </div>
+    </ContactFormContainer>
   )
 
 }
