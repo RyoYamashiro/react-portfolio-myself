@@ -34,19 +34,20 @@ const useStyles = makeStyles ({
 const ContactFormContainer = styled.div`
   width: 75%;
   margin: 0 auto;
-    .textfield-wrapper{
-    margin-bottom: ${space_l};
-    }
-    .error-message{
-    color: red;
-    height: 1em;
-    ${media.handheld`
-      font-size: 14px;
-    `}
-    .contact-form{
-      padding-top: ${space_s};
-      width: 100%;
-    }
+  .contact-form{
+    padding-top: ${space_s};
+    width: 100%;
+    overflow: hidden;
+  }
+  .textfield-wrapper{
+  margin-bottom: ${space_l};
+  }
+  .error-message{
+  color: red;
+  height: 1em;
+  ${media.handheld`
+    font-size: 14px;
+  `}
   }
 `;
 const SendMessage = styled.p`
