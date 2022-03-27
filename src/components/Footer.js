@@ -23,7 +23,7 @@ const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 56px;
   ${media.handheld`
     font-size: ${font_size_m};
     height: 45px;

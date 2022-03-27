@@ -113,7 +113,7 @@ const SNSIconWrapper = styled.li`
     width: 100%;
     justify-content: center;
     .sns-link{
-      padding: ${space_l};
+      padding: ${space_m};
     }
   `}
 `;

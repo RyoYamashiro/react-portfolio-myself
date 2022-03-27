@@ -9,7 +9,7 @@ import ClassNames from 'classnames';
 import {contactReducer, initialState} from '../reducers/contactReducer';
 
 import styled from 'styled-components';
-import {space_l, space_s, font_size_l, brown, pink} from '../utils/styledComponents';
+import {media, space_l, space_s, font_size_l, brown, pink} from '../utils/styledComponents';
 
 
 
@@ -40,13 +40,12 @@ const ContactFormContainer = styled.div`
     .error-message{
     color: red;
     height: 1em;
-    @include mq(){
+    ${media.handheld`
       font-size: 14px;
-    }
+    `}
     .contact-form{
       padding-top: ${space_s};
       width: 100%;
-      overflow: hidden;
     }
   }
 `;

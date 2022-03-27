@@ -31,6 +31,9 @@ const StyledBox = styled(Box)`
     box-sizing: border-box;
     width: 90%;
   `}
+  .technique{
+    margin-bottom: ${space_m};
+  }
 `;
 
 const style = {
@@ -80,6 +83,7 @@ const StyledCloseIcon = styled(CloseIcon)`
     right: 10px;
     top: 10px;
   `}
+
 `;
 
 function TechniqueCard(props){

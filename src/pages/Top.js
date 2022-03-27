@@ -1,13 +1,51 @@
-import Title from '../components/Title'
+import styled from 'styled-components';
+import { media, green, pink, font_size_default, font_size_xl } from '../utils/styledComponents';
 
+const TopContainer = styled.div`
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  width: 100vw;
+  .greeting-title{
+    letter-spacing: -0.05em;
+    color: pink;
+    font-size: px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 54px;
+    text-shadow: 2px 2px 4px #ddd;
+    ${media.handheld`
+      font-size: 34px;
+    `}
+    br{
+      display: none;
+      ${media.handheld`
+        display: inline-block;
+      `}
+    }
+    strong{
+      font-size: 96px;
+      ${media.handheld`
+        font-size: 52px;
+      `}
+    }
+  }
+  .greeting-text{
+    font-size: ${font_size_xl};
+    ${media.handheld`
+      font-size: ${font_size_default};
+    `}
+  }
+`;
 function Top() {
   return (
-    <div className="top-container">
-      <p>リョウヤマです。</p>
-      <p>こちらはリョウヤマのポートフォリオサイトです。</p>
-      <p>数多のサイトからこちらのサイトをご覧くださってありがとうございます。</p>
-      <p>現在習得している技術と価値観のアウトプットしておりますので、厳しい目でご覧いただけたらと思います。<br />また、もし可能でしたら改善した方がいい箇所・伸ばした方がいい箇所がありましたら、CONTACTページのフォームやヘッダー右側のSNSから連絡いただけると幸いです。</p>
-    </div>
+    <TopContainer>
+      <p className="greeting-title"><strong>リョウヤマ</strong>の<br />ポートフォリオ</p>
+      <p className="greeting-text">ご閲覧いただきありがとうございます。</p>
+    </TopContainer>
   );
 }
 
