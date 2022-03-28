@@ -36,6 +36,9 @@ const ProfileContainer = styled.div`
     ${media.handheld`
       margin-left: 0;
     `}
+    .profile-text{
+      width: 100%;
+    }
   }
   .profile-heading{
     font-size: ${font_size_l};
@@ -60,7 +63,7 @@ function Profile(){
         <div className="profile-thumb" style={{backgroundImage: `url(${ProfileImage})`}}></div>
         <div className="profile-content">
           <p className="profile-heading">リョウヤマ</p>
-          <p className="profile-text">沖縄県で1997年に生まれ、散歩と旅行を趣味としております。<br />WEBエンジニア実務経験はございませんが、少しでも誰かのお力になれたらと思っております。<br />
+          <p className="profile-text">沖縄県で1997年に生まれ、散歩と旅行を趣味としております。<br />WEBエンジニア実務経験はございませんが、少しでも誰かのお力になれたらと思っております。
           </p>
         </div>
       </ProfileContainer>
