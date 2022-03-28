@@ -146,8 +146,8 @@ function Header(){
           <li className="menu-item"><Link className="menu-link" to="/bio" onClick={handleClickCloseMenu} >Bio</Link></li>
           <li className="menu-item"><Link className="menu-link" to="/contact" onClick={handleClickCloseMenu}>Contact</Link></li>
           <SNSIconWrapper className="menu-item">
-            <a className="sns-link twitter-icon" href="https://twitter.com/ClwhcvWupnizvXv" target="_blank"><TwitterIcon fontSize="large" /></a>
-            <a className="sns-link github-icon" href="https://github.com/RyoYamashiro" target="_blank"><GitHubIcon fontSize="large" /></a>
+            <a className="sns-link twitter-icon" href="https://twitter.com/ClwhcvWupnizvXv"><TwitterIcon fontSize="large" /></a>
+            <a className="sns-link github-icon" href="https://github.com/RyoYamashiro"><GitHubIcon fontSize="large" /></a>
           </SNSIconWrapper>
         </MenuContainer>
       </NavMenu>
