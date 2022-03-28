@@ -1,4 +1,3 @@
-import {useState} from 'react';
 
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from '@mui/material';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';

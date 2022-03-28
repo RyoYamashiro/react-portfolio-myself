@@ -123,7 +123,6 @@ const SNSIconWrapper = styled.li`
 
 function Header(){
 
-  const [hamburger, setHamburger] = useState(false);
   const [isOpen, setOpen] = useState(false)
   const handleClickCloseMenu = (e) => {
       setOpen(!isOpen);
