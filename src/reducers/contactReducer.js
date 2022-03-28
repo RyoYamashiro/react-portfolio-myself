@@ -12,6 +12,6 @@ export const contactReducer = (state, action) => {
     case 'finish':
       return {...state, sendStatus: 0}
     default:
-      return {throw new Error();}
+      throw new Error();
   }
 }
