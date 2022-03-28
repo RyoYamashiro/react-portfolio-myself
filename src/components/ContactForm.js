@@ -1,8 +1,8 @@
-import React, {useReducer, useState} from 'react';
-import {Grid, TextField, Button} from '@mui/material';
+import React, {useReducer} from 'react';
+import {TextField, Button} from '@mui/material';
 import {makeStyles} from '@material-ui/core/styles';
 
-import {init, sendForm, send} from 'emailjs-com';
+import {init, send} from 'emailjs-com';
 import {useForm} from 'react-hook-form';
 import ClassNames from 'classnames';
 
@@ -94,7 +94,7 @@ const ContactForm = () => {
     const user_id = process.env.REACT_APP_USER_ID;
     const service_id = process.env.REACT_APP_SERVICE_ID;
     const template_id = process.env.REACT_APP_TEMPLATE_ID;
-    if((user_id != undefined) && (service_id != undefined) && (template_id != undefined)){
+    if((user_id !== undefined) && (service_id !== undefined) && (template_id !== undefined)){
       dispatch({type: 'sending'})
       init(user_id);
       const template_param = {

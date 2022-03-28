@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media, green, pink, font_size_default, font_size_xl } from '../utils/styledComponents';
+import { media, pink, font_size_default, font_size_xl } from '../utils/styledComponents';
 
 const TopContainer = styled.div`
   position: absolute;
@@ -11,7 +11,7 @@ const TopContainer = styled.div`
   width: 100vw;
   .greeting-title{
     letter-spacing: -0.05em;
-    color: pink;
+    color: ${pink};
     font-size: px;
     display: inline-block;
     font-weight: bold;

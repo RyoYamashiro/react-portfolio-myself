@@ -1,5 +1,4 @@
 import SecondTitle from './SecondTitle';
-import Badge from './Badge';
 import ProfileImage from '../images/profile-image.jpg';
 
 import styled from 'styled-components';

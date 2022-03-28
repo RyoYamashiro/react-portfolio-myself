@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import CloseIcon from '@mui/icons-material/Close';
 
 import styled from 'styled-components';
-import { media, font_size_xxl, font_family_corp, space_s, space_m, space_l, space_xl, space_3l, green, pink } from '../utils/styledComponents';
+import { media, font_size_xxl, font_family_corp, space_s, space_m, space_xl, green, pink } from '../utils/styledComponents';
 
 
 
