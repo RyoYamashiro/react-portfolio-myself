@@ -6,7 +6,7 @@ import Interview from '../components/Interview'
 function Bio(){
   return (
     <>
-    <Title title="Bio" subtitle="本サイト制作者である「リョウヤマ」についての説明ページです。認識齟齬・誤解なく伝えられたらなと思います。" />
+    <Title title="Bio" subtitle="本サイト制作者である「リョウヤマ」についての説明ページです。" />
     <Profile />
     <Interview />
     </>

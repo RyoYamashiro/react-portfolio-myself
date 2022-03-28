@@ -10,6 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     panelSummary: {
       width: '100%',
+      marginRight: '8px',
+      paddingLeft: '8px',
       paddingRight: '8px'
     }
   })
@@ -27,7 +29,7 @@ function InterviewAccordion(props){
       aria-controls="panel1a-content"
       id="panel1a-header"
     >
-      <Typography sx={{flexShrink: 0, color: '#ff8af2', marginRight: '8px', marginLeft: '8px' }}>{'Q'+ props.data.number}</Typography>
+      <Typography sx={{flexShrink: 0, color: '#ff8af2', marginRight: '8px',}}>{'Q'+ props.data.number}</Typography>
       <Typography sx={{ color: 'text.secondary' }}>
         {props.data.question}
       </Typography>

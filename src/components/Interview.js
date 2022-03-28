@@ -8,7 +8,7 @@ function Interview(){
 
   return(
     <div>
-      <SecondTitle title="Interview" subtitle="リョウヤマの性格や考え方についてQ&A形式でお伝えします。少しひねくれた内容もありますが、等身大をお伝えしたくそのような内容になっております。どうしても不快に思う箇所がありましたら、ご指摘いただけるとありがたいです。" />
+      <SecondTitle title="Interview" subtitle="リョウヤマの性格や考え方についてQ&A形式でお伝えします。" />
 
 
 
