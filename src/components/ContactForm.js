@@ -64,6 +64,9 @@ const SendMessage = styled.p`
   color: #fff;
   z-index: 3;
   transform: translateY(-100%);
+  ${media.handheld`
+    font-size: 14px;
+  `}
   &.active{
     transform: translateY(0%);
   }

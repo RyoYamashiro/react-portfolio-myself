@@ -4,45 +4,13 @@
 	src: url(/font/Hubballi-Regular.ttf);
 }
 // ==================================
-// variable
-// ==================================
-$green : #c7ffea;
-$pink: #ff8af2;
-$brown: #b55a48;
-$font-color_default: #666;
-$font-color_date: #e37b89;
-$color_corp: #f780ff;
-$font-color_sub1: #b6a489;
-
-$site-width: 980px;
-
-$font-size_s: 5px;
-$font-size_m: 10px;
-$font-size_default: 14px;
-$font-size_l: 20px;
-$font-size_xl: 25px;
-$font-size_xxl: 30px;
-$font-size_3l: 35px;
-
-$space_s: 8px;
-$space_m: 16px;
-$space_l: 24px;
-$space_xl: 32px;
-$space_xxl: 40px;
-$space_3l: 56px;
-
-$font-family_corp: 'Hubballi', cursive;
-
-
-
-// ==================================
 // base
 // ==================================
 html, body {
 
   width: 100%;
-  color: $font-color_default;
-  font-size: $font-size_default;
+  color: #666;
+  font-size: 14px;
   line-height: 1.6;
   text-size-adjust: 100%;
   letter-spacing: 0.08em;
@@ -54,13 +22,13 @@ p, a {
 }
 
 a {
-  color: $pink;
+  color: #ff8af2;
   text-decoration: none;
   transition: .3s;
 }
 
 a:hover {
-  color: $brown;
+  color: #b55a48;
   transition: .3s;
 }
 
