@@ -1,9 +1,14 @@
-import SecondTitle from './SecondTitle';
-import ProfileImage from '../images/profile-image.jpg';
+import SecondTitle from "./SecondTitle";
+import ProfileImage from "../images/profile-image.jpg";
 
-import styled from 'styled-components';
-import { media, space_m, space_l, font_size_l, green } from '../utils/styledComponents';
-
+import styled from "styled-components";
+import {
+  media,
+  space_m,
+  space_l,
+  font_size_l,
+  green,
+} from "../utils/styledComponents";
 
 const ProfileContainer = styled.div`
   width: 600px;
@@ -53,20 +58,29 @@ const ProfileContainer = styled.div`
     }
 `;
 
-
-function Profile(){
+function Profile() {
   return (
     <div>
-      <SecondTitle title="Profile" subtitle="リョウヤマの基本情報です。（こちらでは細かな個人情報は控えておりますが、知りたい情報がありましたら気兼ねなく「CONTACT」よりお問合せください。）" />
+      <SecondTitle
+        title="Profile"
+        subtitle="リョウヤマの基本情報です。（こちらでは細かな個人情報は控えておりますが、知りたい情報がありましたら気兼ねなく「CONTACT」よりお問合せください。）"
+      />
       <ProfileContainer>
-        <div className="profile-thumb" style={{backgroundImage: `url(${ProfileImage})`}}></div>
+        <div
+          className="profile-thumb"
+          style={{ backgroundImage: `url(${ProfileImage})` }}
+        ></div>
         <div className="profile-content">
           <p className="profile-heading">リョウヤマ</p>
-          <p className="profile-text">沖縄県で1997年に生まれ、散歩と旅行を趣味としております。<br />WEBエンジニア実務経験はございませんが、少しでも誰かのお力になれたらと思っております。
+          <p className="profile-text">
+            沖縄県で1997年に生まれ、散歩と旅行を趣味としております。
+            <br />
+            Laravelを中心としたバックエンドエンジニア経験があります。
+            <br />
           </p>
         </div>
       </ProfileContainer>
     </div>
-  )
-};
+  );
+}
 export default Profile;
