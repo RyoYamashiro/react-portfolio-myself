@@ -109,27 +109,6 @@ const NavMenu = styled.nav`
   `}
 `;
 
-const SNSIconWrapper = styled.li`
-  display: flex;
-  position: relative;
-  top: 6px;
-  justify-content: space-between;
-  width: 74px;
-  .twitter-icon {
-    color: #00acee;
-  }
-  .github-icon {
-    color: #211f1f;
-  }
-  ${media.handheld`
-    width: 100%;
-    justify-content: center;
-    .sns-link{
-      padding: ${space_m};
-    }
-  `}
-`;
-
 function Header() {
   const [isOpen, setOpen] = useState(false);
   const handleClickCloseMenu = (e) => {
@@ -179,10 +158,6 @@ function Header() {
               Contact
             </Link>
           </li>
-          {/* <SNSIconWrapper className="menu-item">
-            <a className="sns-link twitter-icon" href="https://twitter.com/ryoyama__"><TwitterIcon fontSize="large" /></a>
-            <a className="sns-link github-icon" href="https://github.com/RyoYamashiro"><GitHubIcon fontSize="large" /></a>
-          </SNSIconWrapper> */}
         </MenuContainer>
       </NavMenu>
     </HeaderContainer>
