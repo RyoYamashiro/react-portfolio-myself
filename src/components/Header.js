@@ -12,7 +12,6 @@ import {
   font_size_xxl,
   font_size_3l,
   font_family_corp,
-  space_m,
   space_l,
   space_xl,
   space_xxl,

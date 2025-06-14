@@ -29,7 +29,7 @@ export const font_size_xxl = '30px';
 export const font_size_3l = '35px';
 
 export const space_s = '8px';
-// export const space_m = '16px';
+export const space_m = '16px';
 export const space_l = '24px';
 export const space_xl = '32px';
 export const space_xxl = '40px';
