@@ -1,71 +1,73 @@
-# Getting Started with Create React App
+## 💻 Key Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **SPA Architecture**: Built as a Single Page Application (SPA) using React’s core features.
+- **Responsive Design**: Optimized for both mobile and desktop with MUI for UI components.
+- **API Integration**: Fetches GitHub data asynchronously to display language usage percentages.
+- **Real-Time Notifications**: Contact form sends real-time notifications via email (ryoyama.work01@gmail.com).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠 Tech Stack
 
-### `npm start`
+- **Frontend**: React (via Create React App), MUI, styled-components
+- **Data Fetching**: GitHub API (asynchronous fetch, post-fetch rendering)
+- **Contact Form**: Input validation (Yup/React Hook Form), notifications
+- **Build & CI**: Yarn, ESLint warnings treated as errors in CI, deployed on Netlify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 👨‍💻 Development Highlights
 
-### `npm test`
+- Implemented multiple core React patterns (state management, effects, conditional rendering).
+- Applied mobile-friendly styling and component-scoped styles using styled-components.
+- Ensured clean CI/CD via Netlify, with lint warnings resolved before production deploys.
+- Integrated GitHub API to dynamically generate language usage stats based on file extensions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✅ QA-Focused Contributions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Even though this PR is for a QA tester role, here are the key areas I've already ensured QA compatibility for:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Cross-browser compatibility testing (Chrome, Firefox, mobile browsers)
+- Validation and sanitization of form inputs
+- Accessibility checks (ARIA labels, button states, responsive UI)
+- CI lint checks ensure code quality before deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 👁️‍🔨 How to Run Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/RyoYamashiro/react-portfolio-myself.git
+cd react-portfolio-myself
+yarn install
+yarn start
+```
+Then, open `http://localhost:3000` in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧰 Testing & QA Instructions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Form Validation**  
+   - Leave required fields empty or enter invalid email → verify validation messages.
+2. **Responsive Design**  
+   - Resize browser or use dev-tools to ensure layout adjusts gracefully.
+3. **Functionality Tests**  
+   - Submit the contact form and check email notification flow.  
+   - Confirm GitHub language stats load correctly and reflect current repositories.
+4. **Cross-Browser/Device Testing**  
+   - Run on Chrome, Firefox, Safari, Edge, and mobile devices/emulators.
+5. **Accessibility Checks**  
+   - Verify ARIA attributes, keyboard navigation, focus state visibility.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌟 Summary
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project demonstrates full-stack understanding with React and API integration, all packaged in a QA-ready portfolio site. As a QA tester applicant, you'll see that attention to detail, usability, and cross-environment compatibility are already built-in.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-portfolio-myself
+📌 Feel free to open issues or PRs if you'd like to suggest enhancements or improvements!
