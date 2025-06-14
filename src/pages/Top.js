@@ -43,7 +43,7 @@ const TopContainer = styled.div`
 function Top() {
   return (
     <TopContainer>
-      <p className="greeting-title"><strong>Leo Yamashiro</strong></p>
+      <p className="greeting-title"><strong>Ryo Yamashiro</strong></p>
       <p className="greeting-text">Thank you for coming.</p>
     </TopContainer>
   );
