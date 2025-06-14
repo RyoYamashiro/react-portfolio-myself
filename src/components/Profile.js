@@ -63,7 +63,7 @@ function Profile() {
     <div>
       <SecondTitle
         title="Profile"
-        subtitle="リョウヤマの基本情報です。（こちらでは細かな個人情報は控えておりますが、知りたい情報がありましたら気兼ねなく「CONTACT」よりお問合せください。）"
+        subtitle="Here is an overview of Ryo Yamashiro’s basic profile."
       />
       <ProfileContainer>
         <div
@@ -71,12 +71,12 @@ function Profile() {
           style={{ backgroundImage: `url(${ProfileImage})` }}
         ></div>
         <div className="profile-content">
-          <p className="profile-heading">リョウヤマ</p>
+          <p className="profile-heading">Ryo Yamashiro’s</p>
           <p className="profile-text">
-            沖縄県で1997年に生まれ、散歩と旅行を趣味としております。
-            <br />
-            Laravelを中心としたバックエンドエンジニア経験があります。
-            <br />
+          I have 4 years of experience in the IT industry — 2 years in backend development using Laravel and jQuery, and 2 years in QA and web operations.
+<br />In development, I’ve built features from scratch, led small teams, and optimized performance using tools like Laravel Debugbar.
+<br />On the QA side, I’ve performed cross-browser testing with BrowserStack and managed tasks using Jira and Slack.
+<br />With hands-on experience in both development and QA, I’m adaptable to diverse teams, workflows, and project environments.
           </p>
         </div>
       </ProfileContainer>

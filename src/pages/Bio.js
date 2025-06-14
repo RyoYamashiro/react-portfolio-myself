@@ -7,7 +7,7 @@ function Bio() {
     <>
       <Title
         title="Bio"
-        subtitle="本サイト制作者である「リョウヤマ」についての説明ページです。"
+        subtitle="This page is all about me — Ryo Yamashiro, the developer behind this site."
       />
       <Profile />
       {/* <Interview /> */}
