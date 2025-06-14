@@ -4,23 +4,23 @@ const techniqueData = [
     techniques: [
       {
         usedTechnique: 'React',
-        info: 'Create React Appにより環境構築して、全体的にReactの基本的な技術を使用しております。'
+        info: 'I built the project with Create React App and mainly used core React features across the site.'
       },
       {
         usedTechnique: 'react-dom-router',
-        info: 'SPAサイトにするため基本的な操作を使用しております。'
+        info: 'I used fundamental React features to implement this site as a Single Page Application (SPA).'
       },
       {
-        usedTechnique: 'レスポンシブデザイン',
-        info: '各ページにスマホ表示用のスタイルも適応しております。'
+        usedTechnique: 'Responsive Design',
+        info: 'Each page includes styles optimized for mobile display to ensure a smooth user experience across devices.'
       },
       {
         usedTechnique: 'MUI',
-        info: 'ボタン・モーダルなどのパーツはMUIライブラリを使用しております。'
+        info: 'For components like buttons and modals, I used the MUI (Material-UI) library to ensure consistency and accessibility.'
       },
       {
         usedTechnique: 'styled-components',
-        info: '各コンポーネントでスタイルを指定するため使用しております。'
+        info: 'I use it to apply styles directly within each component for better modularity and maintainability.'
       }
     ]
   },
@@ -29,11 +29,11 @@ const techniqueData = [
     techniques: [
       {
         usedTechnique: 'GithubAPI',
-        info: '使用可能言語の習得度を数値化して表示するために、Githubアカウントのリポジトリ内にアップロードされてるファイルの拡張子の数を拾っております。'
+        info: 'In order to numerically represent my familiarity with each language, I collect the number of file extensions uploaded in my GitHub repositories and use them as the basis for percentage estimates.'
       },
       {
         usedTechnique: 'useEffect',
-        info: 'GithubAPIが非同期処理なので、データ抽出後にレンダー処理などするために使用しております。'
+        info: 'Because the GitHub API is asynchronous, I handle the data after it has been fetched to trigger rendering and other related processes.'
       }
     ]
   },
@@ -41,8 +41,8 @@ const techniqueData = [
     pageName: 'Bio',
     techniques: [
       {
-        usedTechnique: 'ページ独自での使用技術無し',
-        info: '全ページで使用しているMUIを主に使用しております。'
+        usedTechnique: 'This page doesn’t use any unique technologies.',
+        info: 'MUI, which is used site-wide, is the primary library used on this page as well.'
       }
     ]
   },
@@ -51,11 +51,11 @@ const techniqueData = [
     techniques: [
       {
         usedTechnique: 'React Hook form',
-        info: '問い合わせフォームの入力内容をバリデーションするため使用しております。'
+        info: 'This is used to perform validation on the input fields in the contact form to ensure correct data is submitted.'
       },
       {
         usedTechnique: 'EmailJS',
-        info: '問い合わせフォームに入力した内容をリョウヤマ本人に通知が来るように同期しております。'
+        info: 'When a message is submitted through the contact form, a notification is sent to me in real time.'
       }
     ]
   },

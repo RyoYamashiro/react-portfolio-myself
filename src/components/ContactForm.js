@@ -13,9 +13,9 @@ import {media, space_l, space_s, font_size_l, brown, pink} from '../utils/styled
 
 
 
-const REQURED_VAL_MESSAGE = "入力必須となっております。";
-const EMAIL_VAL_MESSAGE = "Emailアドレスの形式で入力ください。";
-const MAXLENGTH_VAL_MESSAGE = "文字以内で入力ください";
+const REQURED_VAL_MESSAGE = "This field is required to submit the form.";
+const EMAIL_VAL_MESSAGE = "Please make sure to enter your email address in the correct format.";
+const MAXLENGTH_VAL_MESSAGE = "characters max.";
 const useStyles = makeStyles ({
   main_button: {
     background: '#ff8af2',
@@ -131,25 +131,25 @@ const ContactForm = () => {
       <SendMessage className={classNameSendMessage}>{state.sendMessage}</SendMessage>
           <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="名前(入力必須)" variant="outlined" fullWidth {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="Name (required)" variant="outlined" fullWidth {...register("name", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})}  />
 
               <p className="error-message">{errors.name && errors.name.message}</p>
             </div>
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="メールアドレス(入力必須)" variant="outlined" fullWidth {...register("mail", {required: REQURED_VAL_MESSAGE, pattern: {value: /^\S+@\S+$/i, message: EMAIL_VAL_MESSAGE}, maxLength: {value: 80, message: "80" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="Email Address (required)" variant="outlined" fullWidth {...register("mail", {required: REQURED_VAL_MESSAGE, pattern: {value: /^\S+@\S+$/i, message: EMAIL_VAL_MESSAGE}, maxLength: {value: 80, message: "80" + MAXLENGTH_VAL_MESSAGE}})}  />
 
               <p className="error-message">{errors.mail && errors.mail.message}</p>
             </div>
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="件名(入力必須)" variant="outlined" fullWidth {...register("title", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})} />
+              <TextField id="outlined-basic" label="Subject (required)" variant="outlined" fullWidth {...register("title", {required: REQURED_VAL_MESSAGE, maxLength: {value: 40, message: "40" + MAXLENGTH_VAL_MESSAGE}})} />
               <p className="error-message">{errors.title && errors.title.message}</p>
             </div>
 
 
             <div className="textfield-wrapper">
-              <TextField id="outlined-basic" label="内容(入力必須)" variant="outlined" fullWidth multiline rows={7} {...register("message", {required: REQURED_VAL_MESSAGE, maxLength: {value: 500, message: "500" + MAXLENGTH_VAL_MESSAGE}})}  />
+              <TextField id="outlined-basic" label="Message (required)" variant="outlined" fullWidth multiline rows={7} {...register("message", {required: REQURED_VAL_MESSAGE, maxLength: {value: 500, message: "500" + MAXLENGTH_VAL_MESSAGE}})}  />
               <p className="error-message">{errors.message && errors.message.message}</p>
             </div>
             <Button className={classes.main_button} variant="contained" size="large" type="submit">メール送信</Button>

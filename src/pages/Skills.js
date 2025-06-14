@@ -6,7 +6,7 @@ import TechniqueList from '../components/TechniqueList';
 function Skills(){
   return (
     <>
-      <Title title="Skills" subtitle="リョウヤマの使用可能技術を紹介するページです。" />
+      <Title title="Skills" subtitle="Here are the technologies I’m familiar with and use in my projects." />
       <LanguageList />
       <TechniqueList />
     </>

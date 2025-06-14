@@ -15,7 +15,7 @@ const TechniqueContainer = styled.div`
 function TechniqueList(){
   return(
     <>
-      <SecondTitle title="Techniques on This Site" subtitle="こちらのポートフォリオサイトの各ページ上で使用してる技術を紹介します。" />
+      <SecondTitle title="Techniques on This Site" subtitle="Here are the technologies I used to build each part of this portfolio website." />
       <TechniqueContainer>
         {
           techniqueData.map((page, index) => <TechniqueCard key={index} page={page} />)

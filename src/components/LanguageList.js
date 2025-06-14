@@ -29,11 +29,11 @@ function LanguageList(){
   const [sortedLanguageList, fetchRequestState, converseCountToPercentage] = useSkills();
   return(
     <>
-      <SecondTitle title="Languages" subtitle="私が使用可能な言語を一覧にしております。(パーセンテージはgithubAPIにより、リポジトリ内に格納されているファイルの拡張子の数×10%で算出しておりますので、熟練度とは異なります。)" />
+      <SecondTitle title="Languages" subtitle="Here’s a list of programming languages I’ve used.(The percentages come from GitHub API and are based on file extensions in my repos — they don’t necessarily reflect how skilled I am with each one.)" />
       <LanguageListContainer>
          {
            fetchRequestState === requestStates.loading && (
-             <p className="description">取得中...</p>
+             <p className="description">Loading...</p>
            )
          }
          {
@@ -53,7 +53,7 @@ function LanguageList(){
           }
          {
            fetchRequestState === requestStates.error && (
-             <p className="description">エラーが発生しました</p>
+             <p className="description">Something went wrong. Please try again later.</p>
            )
          }
       </LanguageListContainer>
